@@ -1,41 +1,93 @@
-<!DOCTYPE HTML>
-<html>
-<head>
-	<title>ExerciseTracker</title>
-	
-	<script type="text/javascript" src="cordova-1.7.0.js"></script>
-	<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDD353fOPh-KBUQ-2ekPCg75uxXRn0D9Tk&sensor=false"></script>
-	<script type="text/javascript" src="json2.js"></script>
-	<script type="text/javascript" src="jquery-1.7.2.min.js"></script>
-	<script type="text/javascript" src="jquery.mobile-1.1.0.min.js"></script>
-    <script type="text/javascript" src="exercisetracker.js"></script>
-	<link rel="stylesheet" href="jquery.mobile-1.1.0.min.css" />
-	
-</head>
-<body>
-<!-- Start of Home page -->
+<!doctype html>
+<html manifest="manifest.appcache" lang="en"> 
+	<head> 
+        <title>Backtrack test</title> 
+        
+        <!-- WEB SEARCH META TAGS -->
+        <meta charset="utf-8">
+        <meta name="application-name" content="APPLICATION NAME" />
+        <meta name="author" content="AUTHOR NAME (@TWITTER)" />
+        <meta name="description" content="APPLICATION DESCRIPTION" />
+        <meta name="keywords" content="keywords,separated,by,commas" />
+        <meta name="copyright" content="© 2013 AUTHOR" />
+        <meta name="generator" content="AUTHOR" />
+        <meta name="robots" content="index,follow,snippet,archive" />
+        <meta name="revisit-after" content="7 days">
+        
+        <!-- SAFARI WEB APP META TAGS -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+        <!-- iOS FAVICONS -->
+        <link rel="apple-touch-icon-precomposed" href="img/icons/favicons/icon57.png">
+        <link rel="apple-touch-icon-precomposed" sizes="57x57" href="img/icons/favicons/icon57.png">
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/icons/favicons/icon72.png">
+        <link rel="apple-touch-icon-precomposed" sizes="76x76" href="img/icons/favicons/icon76.png">
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/icons/favicons/icon114.png">
+        <link rel="apple-touch-icon-precomposed" sizes="120x120" href="img/icons/favicons/icon120.png">
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="img/icons/favicons/icon144.png">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="img/icons/favicons/icon152.png">
+
+        <!-- OTHER FAVICONS -->
+        <link rel="icon" sizes="16x16" type="image/vnd.microsoft.icon" href="img/icons/favicons/icon16.ico">
+        <link rel="icon" sizes="16x16" type="image/png" href="img/icons/favicons/icon16.png">
+        <link rel="icon" sizes="32x32" type="image/png" href="img/icons/favicons/icon32.png">
+        <link rel="icon" sizes="64x64" type="image/png" href="img/icons/favicons/icon64.png">
+        <link rel="icon" sizes="any" type="image/svg+xml" href="img/icons/favicons/icon.svg">
+
+        <!-- iOS Splash Screens -->
+        <!-- iPhone -->
+        <link rel="apple-touch-startup-image" href="img/splash/ios/splash320x460.png" media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 1)">
+        <!-- iPhone (Retina) -->
+        <link rel="apple-touch-startup-image" href="img/splash/ios/splash640x920.png" media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 2)">
+        <!-- iPhone 5 -->
+        <link rel="apple-touch-startup-image" href="img/splash/ios/splash640x1096.png" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)">
+        <!-- iPad -->
+        <link rel="apple-touch-startup-image" href="img/splash/ios/splash768x1004.png" media="(device-width: 768px) and (device-height: 1024px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 1)">
+        <link rel="apple-touch-startup-image" href="img/splash/ios/splash748x1024.png" media="(device-width: 768px) and (device-height: 1024px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 1)">
+        <!-- iPad (Retina) -->
+        <link rel="apple-touch-startup-image" href="img/splash/ios/splash1536x2008.png" media="(device-width: 768px) and (device-height: 1024px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2)">
+        <link rel="apple-touch-startup-image" href="img/splash/ios/splash1496x2048.png" media="(device-width: 768px) and (device-height: 1024px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2)">
+            
+        <!-- ADD2HOME META TAGS -->
+        <link rel="stylesheet" type="text/css" href="js/lib/add2home.css">
+        <script type="application/javascript" src="js/lib/add2home.js"></script>
+
+        <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDD353fOPh-KBUQ-2ekPCg75uxXRn0D9Tk&sensor=false"></script>
+
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.0/jquery.mobile-1.4.0.min.css" />
+        <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+        <script src="https://code.jquery.com/mobile/1.4.0/jquery.mobile-1.4.0.min.js"></script>
+        <script type="text/javascript" src="json2.js"></script>
+        <script type="text/javascript" src="exercisetracker.js"></script>
+
+    </head> 
+    <body> 
+        
+  <!-- Start of Home page -->
 <div data-role="page" id="home">
 
-	<div data-role="header">
-	
-		<h1>Home</h1>
-	
-		<div data-role="navbar">
-			<ul>
-				<li><a href="#home" data-transition="none" data-icon="home">Home</a></li>
-				<li><a href="#startTracking" data-transition="none" data-icon="plus">Track Workout</a></li>
-				<li><a href="#history" data-transition="none" data-icon="star">History</a></li>
-			</ul>
-		</div>
-	</div>
+    <div data-role="header">
+    
+        <h1>Home</h1>
+    
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#home" data-transition="none" data-icon="home">Home</a></li>
+                <li><a href="#startTracking" data-transition="none" data-icon="plus">Track Workout</a></li>
+                <li><a href="#history" data-transition="none" data-icon="star">History</a></li>
+            </ul>
+        </div>
+    </div>
 
-	<div data-role="content">
-		<p>Welcome to the <em>ExerciseTracker</em> app. By clicking <em>Track Workout</em> you can record your workouts using the GPS feature on your phone. Learn how to build this app by reading <em>mobile.tutsplus.com</em>.</p>
-	
-		<button id="home_network_button" data-icon="check">Internet Access Enabled</button>
-		<button id="home_clearstorage_button">Clear local storage</button>
-		<button id="home_seedgps_button">Load Seed GPS Data</button>
-	</div>
+    <div data-role="content">
+        <p>Welcome to the <em>ExerciseTracker</em> app. By clicking <em>Track Workout</em> you can record your workouts using the GPS feature on your phone. Learn how to build this app by reading <em>mobile.tutsplus.com</em>.</p>
+    
+        <button id="home_network_button" data-icon="check">Internet Access Enabled</button>
+        <button id="home_clearstorage_button">Clear local storage</button>
+        <button id="home_seedgps_button">Load Seed GPS Data</button>
+    </div>
 
 
 </div>
@@ -44,32 +96,32 @@
 <!-- Start of Trackwork Out page -->
 <div data-role="page" id="startTracking">
 
-	<div data-role="header">
-		<h1>Track Workout</h1>
-		
-		<div data-role="navbar">
-			<ul>
-				<li><a href="#home" data-transition="none" data-icon="home">Home</a></li>
-				<li><a href="#startTracking" data-transition="none" data-icon="plus">Track Workout</a></li>
-				<li><a href="#history" data-transition="none" data-icon="star">History</a></li>
-			</ul>
-		</div>
-	</div>
+    <div data-role="header">
+        <h1>Track Workout</h1>
+        
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#home" data-transition="none" data-icon="home">Home</a></li>
+                <li><a href="#startTracking" data-transition="none" data-icon="plus">Track Workout</a></li>
+                <li><a href="#history" data-transition="none" data-icon="star">History</a></li>
+            </ul>
+        </div>
+    </div>
 
-	<div data-role="content">	
-		<p id="startTracking_status"></p>
-			<div data-role="fieldcontain" class="ui-hide-label">
-				<label for="track_id">Track ID/Name:</label>
-				<input type="text" name="track_id" id="track_id" placeholder="Workout ID/Name"/>
-			</div>
+    <div data-role="content">   
+        <p id="startTracking_status"></p>
+            <div data-role="fieldcontain" class="ui-hide-label">
+                <label for="track_id">Track ID/Name:</label>
+                <input type="text" name="track_id" id="track_id" placeholder="Workout ID/Name"/>
+            </div>
 
-		<button data-role="button" id="startTracking_start">Start Tracking</button>
-		<button data-role="button" id="startTracking_stop">Stop Tracking</button>  
-		
-				<p id="startTracking_info"></p>
-		
-		
-	</div>
+        <button data-role="button" id="startTracking_start">Start Tracking</button>
+        <button data-role="button" id="startTracking_stop">Stop Tracking</button>  
+        
+                <p id="startTracking_info"></p>
+        
+        
+    </div>
 
 
 </div><!-- /page -->
@@ -89,7 +141,7 @@
         </div>
     </div>
 
-    <div data-role="content">	
+    <div data-role="content">   
         <p id="tracks_recorded"></p>
         
         <ul data-role="listview" id="history_tracklist">
@@ -103,28 +155,29 @@
 <!-- Track Info page -->
 <div data-role="page" id="track_info">
 
-	<div data-role="header">
-		<h1>Viewing Single Workout</h1>
-		
-		<div data-role="navbar">
-			<ul>
-				<li><a href="#home" data-transition="none" data-icon="home">Home</a></li>
-				<li><a href="#startTracking" data-transition="none" data-icon="plus">Track Workout</a></li>
-				<li><a href="#history" data-transition="none" data-icon="star">History</a></li>
-			</ul>
-		</div>
-	</div>
+    <div data-role="header">
+        <h1>Viewing Single Workout</h1>
+        
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#home" data-transition="none" data-icon="home">Home</a></li>
+                <li><a href="#startTracking" data-transition="none" data-icon="plus">Track Workout</a></li>
+                <li><a href="#history" data-transition="none" data-icon="star">History</a></li>
+            </ul>
+        </div>
+    </div>
 
-	<div data-role="content">	
-		<p id="track_info_info"></p>
-		
-		<div id="map_canvas" style="position:absolute;bottom:0;left:0;width:100%;height:300px;"></div>
-		
-	</div>
+    <div data-role="content">   
+        <p id="track_info_info"></p>
+        
+        <div id="map_canvas" style="position:absolute;bottom:0;left:0;width:100%;height:300px;"></div>
+        
+    </div>
 
 
 </div><!-- /page -->
-
-
-</body>
+        
+        <!-- SCRIPTS -->
+        <script type="application/javascript" src="js/lib/jquery-2.0.3.js"></script>
+    </body>
 </html>
